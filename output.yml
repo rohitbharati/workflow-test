@@ -1,0 +1,12 @@
+name:
+on: workflow_dispatch
+jobs:
+  runs-on: [ubuntu]
+  steps:
+    - name: Set some output
+      id: name-sayer
+      outputs:
+        echo "name"="rohit" >> $GITHUB_OUTPUT
+    - name: Get output
+      run: 
+        echo "${{ github.publish.output.name-sayer }}"

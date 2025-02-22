@@ -1,0 +1,13 @@
+name: job-name
+on: 
+  workflow_dispatch
+jobs:
+  my-job-name:
+  steps:
+    - name: step-name
+      run: |
+        echo "run something here"
+
+    - name: another step
+      run: |
+        echo "run something else here"

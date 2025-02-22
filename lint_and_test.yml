@@ -1,0 +1,25 @@
+name: Lint test and build
+on:
+  push
+jobs:
+  lint: 
+    runs-on: [ubuntu:latest]
+    steps:
+      - name: lint
+        run: |
+          linting process
+  test:
+    needs: lint
+    runs-on: [ubuntu:latest]
+    steps:
+      - name: test
+        run: |
+          testing process
+  build:
+    needs: [test,lint]
+    runs-on: [ubuntu:latest]
+    steps:
+      - name: build
+        run: |
+          building process    
+
