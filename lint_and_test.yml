@@ -8,6 +8,7 @@ jobs:
       - name: lint
         run: |
           linting process
+# something for test branch
   test:
     needs: lint
     runs-on: [ubuntu:latest]
