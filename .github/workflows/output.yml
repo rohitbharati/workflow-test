@@ -1,12 +1,19 @@
-name:
+name: check output
 on: workflow_dispatch
 jobs:
-  runs-on: [ubuntu]
-  steps:
-    - name: Set some output
-      id: name-sayer
-      outputs:
-        echo "name"="rohit" >> $GITHUB_OUTPUT
-    - name: Get output
-      run: 
-        echo "${{ github.publish.output.name-sayer }}"
+  set-output:
+    runs-on: "ubuntu-latest"
+    outputs:
+      name-sayers: ${{ steps.name-sayer.outputs.name }}
+    steps:
+      - name: Set some output
+        id: name-sayer
+        run: echo "name"="rohit" >> $GITHUB_OUTPUT
+    
+  get-output:
+    needs: set-outputs
+    runs-on: "ubuntu-latest"
+    steps: 
+      - name: Get output
+        run: 
+          echo "${{ needs.set-outputs.outputs.name-sayers }}"
