@@ -11,9 +11,9 @@ jobs:
         run: echo "name"="rohit" >> $GITHUB_OUTPUT
     
   get-output:
-    needs: set-outputs
+    needs: set-output
     runs-on: "ubuntu-latest"
     steps: 
       - name: Get output
         run: 
-          echo "${{ needs.set-outputs.outputs.name-sayers }}"
+          echo "${{ needs.set-output.outputs.name-sayers }}"
