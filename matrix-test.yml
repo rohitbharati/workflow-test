@@ -1,0 +1,21 @@
+name: check output
+on: workflow_dispatch
+jobs:
+  set-output:
+    strategy:
+      matrix:
+        names: ['rohit','name2', 'name3']
+    runs-on: "ubuntu-latest"
+    outputs:
+      name-sayers: ${{ steps.name-sayer.outputs.name }}
+    steps:
+      - name: Set some output
+        id: name-sayer
+        run: echo "name"=${{ matrix.names }}>> $GITHUB_OUTPUT
+    
+  # get-output:
+    # runs-on: "ubuntu-latest"
+    # steps: 
+      - name: Get output
+        run: 
+          echo "${{ steps.name-sayer.outputs.name-sayers }}"

@@ -8,12 +8,14 @@ jobs:
       - name: lint
         run: |
           linting process
+# something for test branch
   test:
     needs: lint
     runs-on: [ubuntu:latest]
     steps:
       - name: test
         run: |
+      #added more
           testing process
   build:
     needs: [test,lint]
