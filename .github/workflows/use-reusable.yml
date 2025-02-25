@@ -1,0 +1,6 @@
+name: Use Reusable Workflow
+on: workflow_dispatch
+jobs:
+  get-files:
+    uses: ./.github/workflows/reusable.yml
+    
