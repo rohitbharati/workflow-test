@@ -1,0 +1,9 @@
+name: Reusable Workflow
+on: workflow_call
+jobs:
+  set-output:
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: add few files
+        run: |
+            touch file1 file2 file3 file4
