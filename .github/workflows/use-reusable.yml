@@ -1,6 +1,15 @@
 name: Use Reusable Workflow
 on: workflow_dispatch
 jobs:
-  get-files:
+  run-reusable-files:
     uses: ./.github/workflows/reusable.yml
+    steps:
+      - name: Checking files
+        run: |
+          ls
+  # check-if-runs:
+  #   needs: run-reusable-files
+  #   runs-on: ubuntu-latest
+  #   steps:
+      -name
     
