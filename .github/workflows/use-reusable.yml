@@ -3,11 +3,14 @@ on: workflow_dispatch
 jobs:
   run-reusable-files:
     uses: ./.github/workflows/reusable.yml
-    steps:
-      - name: Checking files
+    # steps:
+    #   - name: Checking files
+    #     run: |
+    #       ls
+  check-if-runs:
+    needs: run-reusable-files
+    runs-on: ubuntu-latest
+    steps:  
+      - name: check op
         run: |
-          ls
-  # check-if-runs:
-  #   needs: run-reusable-files
-  #   runs-on: ubuntu-latest
-  #   steps:    
+          ls  
