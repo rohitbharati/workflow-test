@@ -12,5 +12,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:  
       - name: check op
-        run: |
-          ls  
+        run: ls  
